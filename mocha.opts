@@ -1,0 +1,3 @@
+--compilers tsx:ts-node/register,ts:ts-node/register
+--reporter dot
+test/**/*.test.tsx
