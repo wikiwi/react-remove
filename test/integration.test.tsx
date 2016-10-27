@@ -31,7 +31,7 @@ describe("integration test", () => {
       "missing element with id 'test1'");
     assert.isNotNull(document.getElementById("test2"),
       "missing element with id 'test2'");
-    assert.isNotNull(document.getElementById("test3",
+    assert.isNotNull(document.getElementById("test3"),
       "missing element with id 'test3'");
   });
 
