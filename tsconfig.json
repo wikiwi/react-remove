@@ -4,13 +4,15 @@
     "module": "es6",
     "moduleResolution": "node",
     "jsx": "react",
-    "noImplicitAny": true,
-    "noFallthroughCasesInSwitch": true
+    "noImplicitAny": true
   },
   "include": [
     "./src/**/*.ts",
     "./src/**/*.tsx",
-    "./src/**/*.d.ts"
+    "./src/**/*.d.ts",
+    "./test/**/*.ts",
+    "./test/**/*.tsx",
+    "./test/**/*.d.ts"
   ],
   "exclude": [
     "node_modules"

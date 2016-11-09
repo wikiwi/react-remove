@@ -11,20 +11,22 @@
     "url": "https://github.com/wikiwi/react-remove/issues"
   },
   "files": [
-    "dist"
+    "dist",
+    "lib",
+    "cjs"
   ],
-  "jsnext:main": "./dist/esm/index.js",
-  "main": "./dist/commonjs/index.js",
-  "typings": "./dist/typings/index.d.ts",
+  "jsnext:main": "./lib/index.js",
+  "main": "./cjs/index.js",
+  "typings": "./lib/index.d.ts",
   "scripts": {
-    "build": "gulp",
-    "clean": "rm -r -f dist",
+    "build": "gulp && webpack",
+    "clean": "rm -r -f dist lib cjs coverage",
     "ci:coveralls": "cat coverage/lcov.info | coveralls",
-    "test": "npm run test:lint && npm run test:coverage",
-    "test:coverage": "cross-env TS_NODE_PROJECT=./test/tsconfig.json istanbul cover -e .ts _mocha -- --opts mocha.opts",
-    "test:lint": "gulp lint",
-    "test:run": "cross-env TS_NODE_PROJECT=./test/tsconfig.json mocha --opts mocha.opts",
-    "test:watch": "cross-env TS_NODE_PROJECT=./test/tsconfig.json mocha --opts mocha.opts --watch"
+    "release": "npm version -m 'react-remove release %s'",
+    "lint": "gulp lint",
+    "test": "cross-env TS_NODE_COMPILER_OPTIONS='{\"module\":\"commonjs\"}' mocha --opts mocha.opts",
+    "test:coverage": "cross-env TS_NODE_COMPILER_OPTIONS='{\"module\":\"commonjs\"}' istanbul cover node_modules/.bin/_mocha -- --opts mocha.opts",
+    "test:watch": "npm run test -- --watch"
   },
   "engines": {
     "node": ">=4"
@@ -50,6 +52,7 @@
     "@types/mocha": "^2.2.32",
     "@types/object-assign": "^4.0.30",
     "@types/react": "^0.14.43",
+    "awesome-typescript-loader": "^2.2.4",
     "cash-rm": "^0.2.0",
     "chai": "^3.5.0",
     "coveralls": "^2.11.14",
@@ -60,8 +63,8 @@
     "eslint-plugin-import": "^2.0.1",
     "gulp": "^3.9.1",
     "gulp-eslint": "^3.0.1",
-    "gulp-ignore": "^2.0.1",
     "gulp-jsonlint": "^1.1.2",
+    "gulp-sourcemaps": "^2.2.0",
     "gulp-tslint": "^6.1.2",
     "gulp-typescript": "^3.0.2",
     "gulp-yaml-validate": "^1.0.2",
@@ -74,6 +77,7 @@
     "react-dom": "^15.3.2",
     "ts-node": "~1.2.3",
     "tslint": "^3.15.1",
-    "typescript": "^2.0.6"
+    "typescript": "^2.0.6",
+    "webpack": "^2.1.0-beta.25"
   }
 }
