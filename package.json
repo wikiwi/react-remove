@@ -1,6 +1,6 @@
 {
   "name": "react-remove",
-  "version": "0.1.0-beta.0",
+  "version": "0.1.0-beta.1",
   "description": "Remove elements from DOM on mount",
   "homepage": "https://github.com/wikiwi/react-remove",
   "repository": {
