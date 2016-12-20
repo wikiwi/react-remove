@@ -12,7 +12,7 @@ const sourcemaps = require("gulp-sourcemaps");
 const files = {
   tsWithoutTest: ["./src/**/*.ts", "./src/**/*.tsx", "!./src/**/*.spec.tsx", "!./src/**/*.spec.ts"],
   tsWithTest: ["./src/**/*.ts", "./src/**/*.tsx", "test/**/*.ts", "test/**/*.tsx"],
-  json: ["./*.json", "./.nycrc"],
+  json: ["./*.json"],
   yaml: ["./*.yml"],
   js: ["./*.js"],
 };
