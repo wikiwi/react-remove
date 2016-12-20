@@ -4,9 +4,7 @@ node_js:
 before_script:
 - npm prune
 script:
-- npm run lint
-- npm run test:coverage
-- npm run build
+- npm run all
 after_success:
 - npm run ci:coveralls
 deploy:

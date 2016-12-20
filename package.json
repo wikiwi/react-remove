@@ -19,6 +19,7 @@
   "main": "./cjs/index.js",
   "typings": "./lib/index.d.ts",
   "scripts": {
+    "all": "npm run lint && npm run test:coverage && npm run build",
     "build": "gulp && webpack && cross-env BUILD_MINIFIED=true webpack",
     "clean": "rm -r -f dist lib cjs coverage",
     "ci:coveralls": "cat coverage/lcov.info | coveralls",
