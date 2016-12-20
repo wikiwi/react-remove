@@ -9,7 +9,7 @@
 import * as React from "react";
 
 export interface RemoveAtttributes {
-  id: string | Array<string>;
+  id: string | string[];
 }
 
 export interface RemoveProps extends
@@ -22,8 +22,8 @@ export interface RemoveProps extends
 export class Remove extends React.PureComponent<RemoveProps, {}> {
   public componentDidMount(): void {
     if (Array.isArray(this.props.id)) {
-      (this.props.id as Array<string>).map(
-        (id: string) => this.removeElementWithID(id)
+      (this.props.id as string[]).map(
+        (id: string) => this.removeElementWithID(id),
       );
       return;
     }
